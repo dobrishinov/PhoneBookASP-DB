@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebPhoneBook", "WebPhoneBook\WebPhoneBook.csproj", "{E1E42209-B994-45A3-BA6A-B40D403ECB6D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{29A37448-D56C-426A-8CBA-A28D153EE55A} = {29A37448-D56C-426A-8CBA-A28D153EE55A}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{29A37448-D56C-426A-8CBA-A28D153EE55A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E1E42209-B994-45A3-BA6A-B40D403ECB6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1E42209-B994-45A3-BA6A-B40D403ECB6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1E42209-B994-45A3-BA6A-B40D403ECB6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1E42209-B994-45A3-BA6A-B40D403ECB6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29A37448-D56C-426A-8CBA-A28D153EE55A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29A37448-D56C-426A-8CBA-A28D153EE55A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29A37448-D56C-426A-8CBA-A28D153EE55A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29A37448-D56C-426A-8CBA-A28D153EE55A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

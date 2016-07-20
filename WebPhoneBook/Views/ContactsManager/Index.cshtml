@@ -1,0 +1,43 @@
+﻿@using  DataAccess.Entity;
+
+@{
+    ViewBag.Title = "Contacts Manager";
+}
+
+<h2>Manage Contacts</h2>
+
+<p>
+    @Html.ActionLink("Create New", "EditContact", "ContactsManager")
+</p>
+<table class="table">
+    <tr>
+        <td>ID</td>
+        <td>Full Name</td>
+        <td>Email</td>
+        <td>Action</td>
+    </tr>
+@foreach (var item in (IEnumerable<ContactEntity>)ViewData["contacts"]) {
+
+    var details = "/ContactsManager/ContactDetails?id=" + item.Id;
+    var edit = "/ContactsManager/EditContact?id=" + item.Id;
+    var delete = "/ContactsManager/DeleteContact?id=" + item.Id;
+
+    <tr>
+        <td>
+            @item.Id
+        </td>
+        <td>
+            @item.FullName
+        </td>
+        <td>
+            @item.Email
+        </td>
+        <td>
+            <a href="@details">Details</a> |
+            <a href="@edit">Edit</a> |
+            <a href="@delete">Delete</a>
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,40 @@
+﻿@using DataAccess.Entity;
+.
+@{
+    ViewBag.Title = "Contact Details";
+}
+
+@{
+    ContactEntity contact = (ContactEntity)ViewData["contact"];
+}
+
+<table class="table" align="center">
+    <h1 style="font-size:26px;">Details for @contact.FullName</h1>
+    <tr>
+        <td>
+            Full Name: @contact.FullName <br />
+            Email: @contact.Email <br />
+            <table>
+                <tr>
+                    <td>Saved Phones:</td>
+                    <td></td>
+                    <td>@Html.ActionLink("Add new phone", "EditPhone", "PhonesManager", new { ContactId = ((ContactEntity)ViewData["contact"]).Id }, null)</td>
+                </tr>
+                <br />
+                <br />
+                @foreach (PhoneEntity phone in (IEnumerable<PhoneEntity>)ViewData["phones"])
+                {
+                    var edit = "/PhonesManager/EditPhone?id=" + phone.Id;
+                    var delete = "/PhonesManager/DeletePhone?id=" + phone.Id;
+                    <tr>
+                        <td>@phone.Phone</td>
+                        <td></td>
+                        <td>
+                            <a href="@edit">Edit</a> |
+                            <a href="@delete">Delete</a>
+                        </td>
+                    </tr>
+                }
+        </td>
+    </tr>
+</table>

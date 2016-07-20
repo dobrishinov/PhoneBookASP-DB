@@ -1,0 +1,31 @@
+﻿@using DataAccess.Entity;
+.
+@{
+    ViewBag.Title = "Add Phones";
+}
+<table class="table" align="center">
+    <h1 style="font-size:26px;">Add Phones</h1>
+    <tr>
+        <td>
+            @{
+                PhoneEntity phone = (PhoneEntity)ViewData["phone"];
+            }
+            <form action="/PhonesManager/EditPhone" method="post">
+                <input type="hidden" name="Id" value="@phone.Id" />
+                <input type="hidden" name="ContactId" value="@phone.ContactId" />
+                <fieldset>
+                    <table>
+                        <tr>
+                            <td>Phone Number:</td>
+                            <td><input type="text" name="Phone" value="@phone.Phone" /></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="submit" value="Save" />&nbsp;<a href="/ContactsManager/ContactDetails?id=@phone.ContactId">Cancel</a></td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </form>
+        </td>
+
+    </tr>
+</table>

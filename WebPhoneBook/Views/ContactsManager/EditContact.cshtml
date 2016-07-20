@@ -1,0 +1,34 @@
+﻿@using DataAccess.Entity;
+.
+@{
+    ViewBag.Title = "Edit Contact";
+}
+<table class="table" align="center">
+    <h1 style="font-size:26px;">Edit Contacts</h1>
+    <tr>
+        <td>
+            @{
+               ContactEntity contact = (ContactEntity)ViewData["contact"];
+            }
+            <form action="/ContactsManager/EditContact" method="post">
+                <input type="hidden" name="Id" value="@contact.Id" />
+                <input type="hidden" name="UserId" value="@contact.UserId" />
+                <fieldset>
+                    <table>
+                        <tr>
+                            <td>Full Name:</td>
+                            <td><input type="text" name="FullName" value="@contact.FullName" /></td>
+                        </tr>
+                        <tr>
+                            <td>Email:</td>
+                            <td><input type="text" name="Email" value="@contact.Email" /></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="submit" value="Save" />&nbsp;<a href="/ContactsManager/Index">Cancel</a></td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </form>
+        </td>
+    </tr>
+</table>
